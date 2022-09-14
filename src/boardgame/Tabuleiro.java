@@ -1,5 +1,7 @@
 package boardgame;
 
+import chess.PecaXadrez;
+
 public class Tabuleiro {
     private int linhas;
     private int colunas;
@@ -50,5 +52,18 @@ public class Tabuleiro {
             throw new TabuleiroException("Posição não existe no tabuleiro.");
         }
         return peca(position) != null;
+    }
+    public Peca removerPeca(Position position){
+        if (!posicaoExiste(position)){
+            throw new TabuleiroException("Posição não existe no tabuleiro.");
+        }
+        if (peca(position) == null) {
+            return null;
+        } else {
+            Peca aux = peca(position);
+            aux.position = null;
+            pecas[position.getLinha()][position.getColuna()] = null;
+            return aux;
+        }
     }
 }
