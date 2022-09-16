@@ -1,6 +1,7 @@
 package application;
 
 import chess.Color;
+import chess.Partida;
 import chess.PecaXadrez;
 import chess.XadrezPosition;
 
@@ -43,6 +44,11 @@ public class UI {
         }
     }
 
+    public static void printPartida(Partida partida){
+        printTabuleiro(partida.getPecas());
+        System.out.println("Turno: " + partida.getTurno());
+        System.out.println("Esperando jogador: " + partida.getJogadorAtual());
+    }
     public static void printTabuleiro(PecaXadrez[][] pecas) {
         for (int i = 0; i < pecas.length; i++) {
             System.out.print((8 - i) + " ");
