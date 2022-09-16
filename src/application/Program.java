@@ -22,7 +22,7 @@ public class Program {
 
                 boolean[][] movimentosPossiveis = partida.possiveisMovimentos(origem);
                 UI.clearScreen();
-                UI.printTabuleiro(partida.getPecas(), movimentosPossiveisc);
+                UI.printTabuleiro(partida.getPecas(), movimentosPossiveis);
 
 
                 System.out.println();
